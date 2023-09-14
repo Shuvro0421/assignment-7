@@ -8,7 +8,7 @@ const Cart = ({ courseNames , credit , remainingCredit }) => {
             <div className="space-y-1 my-3 text-gray-500 text-sm text">
 
                 {
-                    courseNames.map((courseName, idx) => <CourseName key={idx} courseName={courseName}></CourseName>)
+                    courseNames.map((courseName, idx) =><CourseName key={idx} courseName={courseName}></CourseName>)
                 }
             </div>
             <h1 className="mt-2 border-t-2 border-gray-300  py-2 text-base font-medium text-gray-500">Total Credit Hour : {credit} </h1>
