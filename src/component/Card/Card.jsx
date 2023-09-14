@@ -1,7 +1,7 @@
 import { MdAttachMoney } from 'react-icons/md'
 import { GoBook } from 'react-icons/go'
 const Card = ({ card , handleCourseName }) => {
-    const { img, course_name, details, credit, price} = card;
+    const { img, course_name, details, credit, price , id} = card;
     return (
         <div className=' flex pt-5 bg-white flex-col  space-y-3 p-5 rounded-xl shadow-sm transition ease-in-out delay-0 hover:translate-y-1  hover:scale-110 duration-300 hover:shadow-2xl'>
             <div className='flex flex-col space-y-3'>
@@ -16,7 +16,7 @@ const Card = ({ card , handleCourseName }) => {
                 <p className='text-gray-500 font-medium'>Credit : {credit}hr</p>
             </div>
             <div className=' flex flex-col text-center bg-blue-500 p-2 rounded-md font-semibold text-white'>
-                <button onClick={() =>handleCourseName(course_name , credit)}>Select</button>
+                <button onClick={() =>handleCourseName(course_name , credit , id)}>Select</button>
             </div>
         </div>
     );

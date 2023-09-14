@@ -8,27 +8,40 @@ const Cards = () => {
     const [courseNames, setCourseNames] = useState([]);
     const [credit, setCredit] = useState(0);
     const [remainingCredit, setRemainingCredit] = useState(20);
+    const [selectedCardIds, setSelectedCardIds] = useState([]);
 
     useEffect(() => {
-        fetch('course.json').then(response => response.json()).then(data => setCards(data));
-    }, [])
+        fetch('course.json')
+            .then(response => response.json())
+            .then(data => setCards(data));
+    }, []);
 
-    const handleCourseName = (course_name, course_credit) => {
+    const handleCourseName = (course_name, course_credit, id) => {
+
         const newCourseNames = [...courseNames, course_name];
-
         const newTotalCredit = credit + course_credit;
         const newRemainingCredit = remainingCredit - course_credit;
+        const newSetSelectedCardIds = [...selectedCardIds, id];
 
-        newTotalCredit > 20 ? alert('Total credit exceeds 20. Cannot add this course') : 
-        newRemainingCredit < 0 ? alert('Credit cannot be negative. Cannot add this course') :
-        (
-            setCredit(newTotalCredit) ,
-            setRemainingCredit(newRemainingCredit) ,
-            setCourseNames(newCourseNames)
-        );
+        const isExist = selectedCardIds.includes(id);
+        if (isExist) {
+            return alert('You cannot add more than one card');
+        }
 
 
-    }
+        if (newTotalCredit > 20) {
+            alert('Total credit exceeds 20. Cannot add this course');
+        }
+        else if (newRemainingCredit < 0) {
+            alert('Credit cannot be negative. Cannot add this course');
+        }
+        else {
+            setCredit(newTotalCredit);
+            setRemainingCredit(newRemainingCredit);
+            setCourseNames(newCourseNames);
+            setSelectedCardIds(newSetSelectedCardIds);
+        }
+    };
 
     return (
         <div className="flex lg:flex-row lg:items-start  space-y-5 mb-7 flex-col md:mx-5 ">
