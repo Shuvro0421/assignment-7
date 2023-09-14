@@ -16,7 +16,7 @@ const Card = ({ card , handleCourseName }) => {
                 <p className='text-gray-500 font-medium'>Credit : {credit}hr</p>
             </div>
             <div className=' flex flex-col text-center bg-blue-500 p-2 rounded-md font-semibold text-white'>
-                <button onClick={handleCourseName}>Select</button>
+                <button onClick={() =>handleCourseName(course_name)}>Select</button>
             </div>
         </div>
     );

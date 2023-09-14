@@ -11,8 +11,9 @@ const Cards = () => {
         fetch('course.json').then(response => response.json()).then(data => setCards(data));
     }, [])
 
-    const handleCourseName = () =>{
-        console.log('added')
+    const handleCourseName = (course_name) =>{
+        const newCourseNames = [...courseNames , course_name];
+        setCourseNames(newCourseNames);
     }
 
     return (
@@ -24,7 +25,7 @@ const Cards = () => {
                 }
             </div>
             <div>
-                <Cart></Cart>
+                <Cart courseNames={courseNames}></Cart>
             </div>
         </div>
     );
