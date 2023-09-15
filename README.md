@@ -14,7 +14,7 @@ This project offers an extensive collection of high-quality courses available at
 
   * **courseNames State:** This state is responsible for presenting the courses added to the cart on the website.
 
-  *** credit State:** It manages and displays the total credit hours, with an upper limit of 20 to maintain balance.
+  * **credit State:** It manages and displays the total credit hours, with an upper limit of 20 to maintain balance.
 
   * **remainingCredit State:** This state keeps track of the remaining credit hours, subtracting the credit hours used for selected courses and ensuring it doesn't exceed 20.
 
