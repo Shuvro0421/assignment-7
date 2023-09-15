@@ -9,4 +9,17 @@ This project offers an extensive collection of high-quality courses available at
   * After selecting certain course the cart is designed to show total credit hours also remaining credit hour
 ## Managing the states 
 
-In my project , I used cards state for getting the card API and its objects to display in my website. I used course name state for showing the courses added in the cart. I used credit state for displaying and conditioning the total credit which will not exceed by 20 . I used remaining credit for the remaining credit hours which will be subtracted by credit hours and the remaining credit hours is set to 20. As for selected card id state, it is use for not having two course name in the cart , for this I filtered card that if the same if exists then it will not add any same course name.
+
+  * **cards State:** This state serves as the data source for fetching card information from the API and managing the card objects' display on the website.
+
+  * **courseNames State:** This state is responsible for presenting the courses added to the cart on the website.
+
+  *** credit State:** It manages and displays the total credit hours, with an upper limit of 20 to maintain balance.
+
+  * **remainingCredit State:** This state keeps track of the remaining credit hours, subtracting the credit hours used for selected courses and ensuring it doesn't exceed 20.
+
+  * **selectedCardIds State:** This state prevents duplicate course names in the cart by filtering out cards with the same course name.
+
+
+
+
