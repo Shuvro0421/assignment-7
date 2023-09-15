@@ -2,9 +2,12 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Card from "../Card/Card";
 import Cart from "../Cart/Cart";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+
+
 
 const Cards = () => {
+
     const [cards, setCards] = useState([]);
     const [courseNames, setCourseNames] = useState([]);
     const [credit, setCredit] = useState(0);
@@ -32,11 +35,17 @@ const Cards = () => {
 
 
         if (newTotalCredit > 20) {
-            Swal.fire('Total credit exceeds 20. Cannot add this course');
+            return (
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Total credit exceeds 20. You cannot add more credits'
+
+                  })
+            );
         }
         else if (newRemainingCredit < 0) {
 
-            Swal.fire('Credit cannot be negative. Cannot add this course');
+            return Swal.fire('Credit cannot be negative. Cannot add this course');
             
         }
         else {

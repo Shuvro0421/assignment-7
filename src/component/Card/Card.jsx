@@ -1,5 +1,6 @@
 import { MdAttachMoney } from 'react-icons/md'
 import { GoBook } from 'react-icons/go'
+
 const Card = ({ card , handleCourseName }) => {
     const { img, course_name, details, credit, price , id} = card;
     return (

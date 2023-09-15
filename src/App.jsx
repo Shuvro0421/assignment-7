@@ -1,7 +1,7 @@
 import './App.css'
 import Cards from './component/Cards/Cards'
-function App() {
 
+function App() {
 
   return (
     <div className='bg-[#F3F3F3]'>
